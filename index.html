@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Welcome to Todo App</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1 class="hero-text" id="greeting">Greeting to you</h1>
+
+    </header>
+    <main>
+        <section>
+            <p>Manage your tasks efficiently and stay organized with your schedules.</p>
+            <a href="index2.html">
+                <button class="btn" id="todoBtn">
+                    Go to My Todos
+                </button>
+            </a>
+        </section>
+    </main>
+
+    <script>
+        // Dynamic greeting based on time
+        function updateGreeting() {
+            const hour = new Date().getHours();
+            const greetingElement = document.getElementById('greeting');
+            let greeting;
+
+            if (hour < 12) {
+                greeting = "Good Morning to you";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon to you";
+            } else {
+                greeting = "Good Evening to you";
+            }
+
+            greetingElement.textContent = greeting;
+        }
+
+
+
+
+        // Initialize everything when the page loads
+        window.onload = function () {
+            updateGreeting();
+            updateTaskCounter();
+            setupButton();
+
+            // Update greeting every minute
+            setInterval(updateGreeting, 60000);
+
+        };
+    </script>
+</body>
+
+</html>

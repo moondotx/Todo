@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Todo app</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="top-img"></div>
+    <main>
+        <header>
+            <h1>My Todos </h1>
+            <div class="tgl-btn" onclick="changeTheme()" style="cursor: pointer"></div>
+        </header>
+        <div class="type-todo">
+            <div class="circle"></div>
+            <input type="text" id="todo-input" placeholder="Add a new task..." />
+        </div>
+        <div class="todos" id="todos-container"></div>
+        <div class="remarks">
+            <div class="completedCount" id="completed-count"></div>
+            <div onclick="clearCompleted()" style="cursor: pointer">
+                Clear Completed
+            </div>
+            <div class="filters">
+                <div class="filterActive" style="cursor: pointer" onclick="showAll()">
+                    All
+                </div>
+                <div onclick="filterActive()" style="cursor: pointer">Active</div>
+                <div onclick="filterCompleted()" style="cursor: pointer">
+                    Completed
+                </div>
+            </div>
+        </div>
+        <!-- return to landing page -->
+
+        <footer>Drag & Drop To Reorder</footer>
+        <a href="index.html" class="return-link">
+            <p class="return"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960"
+                    width="30px" fill=" hsl(234, 11%, 52%)">
+                    <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+                </svg></p>
+        </a>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
